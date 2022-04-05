@@ -9,7 +9,7 @@
             echo $this->Form->control('numerochassi');
         ?>
     </fieldset>
-<?= $this->Form->button(__('Submit')) ?>
+<?= $this->Form->button(__('Adicionar')) ?>
 <?= $this->Form->end() ?>
 
 <div class="diretorios">
