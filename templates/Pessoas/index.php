@@ -20,7 +20,8 @@
             <td><?= h($pessoa->cpf) ?></td>
             <td>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $pessoa->id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $pessoa->id], ['confirm' => __('Você quer mesmo deletar o usuario # {0}?', $pessoa->id)]) ?>
+                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $pessoa->id], 
+                ['confirm' => __('Você quer mesmo deletar o usuario # {0}?', $pessoa->id)]) ?>
             </td>
         </tr>
     <?php endforeach; ?>

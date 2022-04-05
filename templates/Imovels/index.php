@@ -14,11 +14,13 @@
             <td><?= $this->Number->format($imovel->id) ?></td>
             <td><?= h($imovel->endereço) ?></td>
             <td><?= h($imovel->numero) ?></td>
-            <td><?= $imovel->has('pessoa') ? $this->Html->link($imovel->pessoa->nome, ['controller' => 'Pessoas', 'action' => 'view', $imovel->pessoa->id]): '' ?></td>
+            <td><?= $imovel->has('pessoa') ? $this->Html->link($imovel->pessoa->nome, 
+                ['controller' => 'Pessoas', 'action' => 'view', $imovel->pessoa->id]): '' ?></td>
             <td><?= $imovel->habitação ? __('Habitada') : __('Inabitada'); ?></td>
             <td>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $imovel->id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $imovel->id], ['confirm' => __('Você quer mesmo deletar o imovel # {0}?', $imovel->id)]) ?>
+                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $imovel->id], 
+                ['confirm' => __('Você quer mesmo deletar o imovel # {0}?', $imovel->id)]) ?>
             </td>
         </tr>
     <?php endforeach; ?>

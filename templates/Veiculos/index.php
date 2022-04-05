@@ -15,12 +15,14 @@
             <td><?= $this->Number->format($veiculo->id) ?></td>
             <td><?= h($veiculo->modelo) ?></td>
             <td><?= h($veiculo->placa) ?></td>
-            <td><?= $veiculo->has('pessoa') ? $this->Html->link($veiculo->pessoa->nome, ['controller' => 'Pessoas', 'action' => 'view', $veiculo->pessoa->id]): '' ?></td>
+            <td><?= $veiculo->has('pessoa') ? $this->Html->link($veiculo->pessoa->nome, 
+                ['controller' => 'Pessoas', 'action' => 'view', $veiculo->pessoa->id]): '' ?></td>
             <td><?= h($veiculo->cor) ?></td>
             <td><?= h($veiculo->numerochassi) ?></td>
             <td>
                 <?= $this->Html->link(__('Edit'), ['action' => 'edit', $veiculo->id]) ?>
-                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $veiculo->id], ['confirm' => __('Você quer mesmo deletar o veiculo # {0}?', $veiculo->id)]) ?>
+                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $veiculo->id], 
+                ['confirm' => __('Você quer mesmo deletar o veiculo # {0}?', $veiculo->id)]) ?>
             </td>
         </tr>
     <?php endforeach; ?>
