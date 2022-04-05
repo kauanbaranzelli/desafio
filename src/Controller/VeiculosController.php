@@ -52,11 +52,11 @@ class VeiculosController extends AppController
         if ($this->request->is('post')) {
             $veiculo = $this->Veiculos->patchEntity($veiculo, $this->request->getData());
             if ($this->Veiculos->save($veiculo)) {
-                $this->Flash->success(__('The veiculo has been saved.'));
+                $this->Flash->success(__('O Usuario foi salvo!'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The veiculo could not be saved. Please, try again.'));
+            $this->Flash->error(__('O veiculo não foi salvo!. Por favor, tente novamente.'));
         }
         $pessoas = $this->Veiculos->Pessoas->find('list', ['limit' => 200])->all();
         $this->set(compact('veiculo', 'pessoas'));
@@ -77,11 +77,11 @@ class VeiculosController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $veiculo = $this->Veiculos->patchEntity($veiculo, $this->request->getData());
             if ($this->Veiculos->save($veiculo)) {
-                $this->Flash->success(__('The veiculo has been saved.'));
+                $this->Flash->success(__('O Usuario  foi editado !'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The veiculo could not be saved. Please, try again.'));
+            $this->Flash->error(__('O veiculo não foi editado!. Por favor, tente novamente.'));
         }
         $pessoas = $this->Veiculos->Pessoas->find('list', ['limit' => 200])->all();
         $this->set(compact('veiculo', 'pessoas'));
@@ -99,9 +99,9 @@ class VeiculosController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $veiculo = $this->Veiculos->get($id);
         if ($this->Veiculos->delete($veiculo)) {
-            $this->Flash->success(__('The veiculo has been deleted.'));
+            $this->Flash->success(__('O veiculo foi excluido!'));
         } else {
-            $this->Flash->error(__('The veiculo could not be deleted. Please, try again.'));
+            $this->Flash->error(__('O veiculo não foi excluido!. Por favor, tente novamente.'));
         }
 
         return $this->redirect(['action' => 'index']);
